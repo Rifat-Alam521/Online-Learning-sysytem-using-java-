@@ -1,0 +1,99 @@
+abstract  class Department {
+	String deptName;
+	int creditFee;
+	Department()
+	{
+	}333
+	public Department(String deptName,int creditFee)
+	{
+		this.deptName=deptName;
+		this.creditFee=creditFee;
+	}	
+	public abstract void calculateSemesterFee(int  credit);
+	
+	
+}
+class Cse extends Department{
+	Cse(String deptName,int creditFee)
+	{
+		super(deptName,creditFee);
+	}
+	 public void calculateSemesterFee(int credit)
+	 {
+		  int Fee=creditFee*credit;
+		  System.out.println("Total:" +Fee);
+	 }
+}
+class Bba extends Department{
+	Bba(String deptName,int creditFee)
+	{
+		super(deptName,creditFee);
+	}
+	public void calculateSemesterFee(int credit)
+	 {
+		 int Fee=creditFee*credit;
+		 System.out.println("Total:" +Fee);
+	 }
+}
+class Eee extends Department{
+	Eee(String deptName,int creditFee)
+	{
+		super(deptName,creditFee);
+	}
+	public void calculateSemesterFee(int credit)
+	 {
+		 int Fee=creditFee*credit;
+		 System.out.println("Total:" +Fee);
+	 }
+}
+class Student{
+	String studentName;
+	Department dept;
+	
+	Student()
+	{
+	}
+	Student(String studentName,Department dept)
+	{
+		this.studentName=studentName;
+		this.dept=dept;
+	}
+		
+	void semesterFee(int totalCredit)
+	{
+		dept.calculateSemesterFee(totalCredit);
+	} 
+	void changeDepartment(Department dept) 
+	{
+		this.dept=dept;
+	}
+	
+	void showInfo()
+	{
+		System.out.println("Student Name:" +studentName);
+		System.out.println("Department Name:" +dept.deptName);	
+	}
+}
+class Dept{
+	
+     public static void main(String [] Arg)
+   {
+	  Cse cs=new Cse("Cse",5000);
+	  Eee ee=new Eee("Eee",4500);
+	  Bba bb=new Bba("Bba",4000);
+	  Student st=new Student("Rifat",cs);
+	  Student st1=new Student("Rifat",ee);
+	  Student st2=new Student("Rifat",bb);
+	  System.out.println("CSE Department Student" );
+	  st.semesterFee(12);
+	  st.showInfo();
+	  System.out.println("EEE Department Student");
+	  st1.showInfo();
+	  System.out.println("BBA Department Student");
+	  st2.showInfo();
+	  System.out.println("After Change");
+	  st.changeDepartment(ee);
+	  st.semesterFee(12);
+	  st.showInfo();
+   }
+}

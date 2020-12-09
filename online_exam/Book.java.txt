@@ -1,0 +1,40 @@
+public class Book
+{
+    private String BookName;
+    private String BookAuthor;
+    private String BookId;
+    private String BookType;
+    private int BookCopy;
+	static int BookCounter;
+	
+	Book()
+	{	  
+	  System.out.println("Constructor");	  
+	}
+	Book(String BookName,String BookAuthor,String BookId,String BookType,int BookCopy)
+	{
+		this.BookName=BookName;
+		this.BookAuthor=BookAuthor;
+		this.BookId=bookId;
+		this.bookType=BookType;
+		this.BookCopy=BookCopy;
+		BookCounter= BookCounter+1;
+	}
+	void showInfo()
+	{
+	System.out.println(BookName);
+    System.out.println(BookId);
+    System.out.println(BookAuthor);
+    System.out.println(BookType);
+    System.out.println(BookCopy);	
+	}
+	int addBookCopy(int x)
+	{
+		BookCopy+=x;
+		return BookCopy;
+	}
+	static void showTotalBook()
+	{
+		System.out.println(BookCounter);
+	}
+}	

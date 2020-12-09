@@ -1,0 +1,50 @@
+public class Library
+{
+	String LibraryName;
+    String LibraryAddress;
+    Book [] listOfBook=new Book[50];
+    int totalBook;
+	static int bookCount;
+	Library()
+	{
+		
+	}
+	Library(String LibraryName,String LibraryAddress)
+	{
+		this.LibraryName=LibraryName;
+		this.LibraryAddress=LibraryAddress;
+	}
+	void showLibInfo()
+	{
+		System.out.println(LibraryName);
+		System.out.println(LibraryAddress);
+		for(int i=0;i<bookCount;i++)
+		{
+			if(listOfBook[i]==null)
+			{
+				continue;
+			}
+			listOfBook[i].showInfo();
+		}
+		
+	}
+    void addNewBook(Book book)
+	{
+		listOfBook[bookCount++]=book;
+	}
+    void deleteBook(Book book)
+	{
+		for(int i=0;i<bookCount;i++)
+		{
+			if(listOfBook[i].equals(book))
+			{	
+		         listOfBook[i]=null;
+			     break;
+			}	
+	    }
+	}
+    void addNewBookCopy(Book book, int copy)
+    {
+		book.addBookCopy(copy);
+	}	
+} 

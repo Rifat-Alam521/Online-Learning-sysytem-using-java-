@@ -1,0 +1,17 @@
+public class Main
+{
+	public static void main(String [] args)
+	{
+		Library objOfLibrary = new Library("AIUB Library","Kuratoli, Dhaka");
+		Book cppBook = new Book("CPP","MIM","1","programming",10);
+		Book cplusplusBook = new Book("JAVA","SHAHIL","2","programming",30);
+		Book cBook = new Book("Let Us C","TASFI","3","programming",50);
+		objOfLibrary.addNewBook(javaBook);
+		objOfLibrary.addNewBook(cplusplusBook);
+		objOfLibrary.addNewBook(cBook);
+		objOfLibrary.showLibInfo();
+		objOfLibrary.addNewBookCopy(cBook,3);
+		objOfLibrary.showLibInfo();
+		Book.showTotalBook();
+	}
+}

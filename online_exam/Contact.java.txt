@@ -1,0 +1,40 @@
+public class Contact
+{
+	private String PName;
+    private String PId;
+    private int age;
+    private String MbNumber;
+    private char Gender;
+	Contact()
+	{
+		
+	}
+	Contact(String personName,String personId,int age,String mobileNumber,char gender)
+	{
+		this.PName=PName;
+		this.PId=PId;
+		this.age=age;
+		this.MbNumber=MbNumber;
+		this.Gender=Gender;
+	}
+	void showPersoninfo()
+	{
+		System.out.println(PName);
+		System.out.println(PId);
+		System.out.println(age);
+		System.out.println(MbNumber);
+		System.out.println(Gender);
+	}
+	void detectMobileOperator()
+	{
+	
+		if(mobileNumber.charAt(2)=='5')
+			System.out.println("GP");
+		else if(mobileNumber.charAt(2)=='2')
+			System.out.println("BL");
+		else if(mobileNumber.charAt(2)=='86')
+			System.out.println("Robi");
+	}
+	
+	
+}
